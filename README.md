@@ -1,7 +1,7 @@
 <h1 align="center">🏎️ PIT WALL — GP DE SÃO PAULO</h1>
 
 <div align="center">
-  <img src="preview.png" alt="Prévia do site PIT WALL - GP de São Paulo" width="100%">
+  <img src="Captura de tela 2026-11-10 144047.png" alt="Prévia do site PIT WALL - GP de São Paulo" width="100%">
 </div>
 
 ## 📌 Sobre o projeto
