@@ -1,0 +1,514 @@
+/*--------------------- VARIÁVEIS E CONFIGURAÇÕES GERAIS ---------------------*/
+:root {
+    --black: #0b0b0f;
+    --panel: #16161d;
+    --red: #e10600;
+    --white: #f5f5f7;
+    --muted: #999999;
+    --line: #22222c;
+
+    --ferrari: #e10600;
+    --mclaren: #ff8000;
+    --mercedes: #00d2be;
+    --audi: #999999;
+
+    --font: 'Titillium Web', 'Segoe UI', sans-serif;
+}
+
+*, *::before, *::after {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font);
+    background-color: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Container Principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/*--------------------- 1. BARRA DO TOPO ---------------------*/
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 1px solid var(--line);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.logo span { 
+    color: var(--red); 
+}
+
+.menu { 
+    display: flex; 
+    gap: 32px; 
+}
+
+.menu a {
+    color: var(--muted);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.menu a:hover { 
+    color: var(--white); 
+}
+
+/* Botões Globais */
+.btn-primary {
+    background-color: var(--red);
+    color: var(--white);
+    padding: 12px 24px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    transition: opacity 0.2s;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--white);
+    padding: 12px 24px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: 1px solid var(--white);
+    display: inline-block;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/*--------------------- 2. DESTAQUE DO GP (HERO) ---------------------*/
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 50px 40px;
+    position: relative;
+    background: 
+        linear-gradient(110deg, 
+            var(--black) 0%, var(--black) 58%, 
+            var(--red) 58%, var(--red) 60%, 
+            rgba(11, 11, 15, 0.35) 60%),
+    flex: 1;
+    min-height: 500px;
+    background: url("img/piloto.jpg") center / cover;
+  
+}
+
+.hero-content {
+    max-width: 600px;
+    z-index: 2;
+}
+
+.subtitle {
+    color: var(--red);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.hero h1 { 
+    font-size: 5.5rem; 
+    font-style: italic; 
+    line-height: 0.95;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.hero h1 span { 
+    display: block; 
+    color: var(--red); 
+}
+
+.description {
+    color: #f3f0f0;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.track-info {
+    display: flex;
+    align-items: flex-end;
+    gap: 30px;
+    z-index: 2;
+    padding-bottom: 10px;
+}
+
+.info {
+    padding-left: 20px;
+    border-left: 1px solid rgba(254, 254, 254, 0.2);
+}
+
+.info strong {
+    display: block;
+    font-size: 2.2rem;
+    font-style: italic;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.info span {
+    font-size: 0.75rem;
+    color: #f3f0f0;
+    letter-spacing: 1px;
+}
+
+/*--------------------- ZEBRA DA PISTA ---------------------*/
+.kerb {
+    height: 12px;
+    background: repeating-linear-gradient(90deg,
+        var(--red) 0, var(--red) 40px,
+        var(--white) 40px, var(--white) 80px);
+}
+
+/* Títulos de Seções */
+.section-title {
+    font-size: 1.8rem;
+    font-style: italic;
+    font-weight: 900;
+    margin: 50px 0 25px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.section-title span {
+    color: var(--red);
+    font-size: 1.2rem;
+}
+
+/*--------------------- 3. CARDS DOS PILOTOS ---------------------*/
+.drivers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.team-ferrari { --team: var(--ferrari); }
+.team-mclaren { --team: var(--mclaren); }
+.team-mercedes { --team: var(--mercedes); }
+.team-audi { --team: var(--audi); }
+
+.driver-card {
+    background: var(--panel);
+    border-top: 5px solid var(--team);
+    padding: 25px 20px;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.driver-card:hover {
+    transform: translateY(-6px);
+}
+
+.car-number { 
+    font-size: 5rem; 
+    font-style: italic;
+    font-weight: 900; 
+    opacity: 0.35; 
+    line-height: 1;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.driver-card h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.driver-card h3 strong {
+    font-weight: 900;
+}
+
+.driver-card p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/*--------------------- 4. CLASSIFICAÇÃO ---------------------*/
+.filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.filter-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.filter-item label, .form-group label {
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+    font-weight: 700;
+}
+
+.filter-item input, .filter-item select,
+.form-group input, .form-group select, .form-group textarea {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    color: var(--white);
+    padding: 12px 15px;
+    font-size: 0.95px;
+    font-family: var(--font);
+    outline: none;
+    width: 100%;
+}
+
+.filter-item input:focus, .filter-item select:focus,
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--red);
+}
+
+.btn-filter {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    color: var(--white);
+    padding: 0 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    align-self: flex-end;
+    height: 48px;
+    transition: background 0.2s;
+}
+
+.btn-filter:hover {
+    background: var(--line);
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    background: var(--panel);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th {
+    color: var(--muted);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--line);
+}
+
+td {
+    padding: 15px 20px;
+    font-size: 0.95rem;
+    border-bottom: 1px solid var(--line);
+}
+
+tbody tr {
+    transition: background 0.2s;
+}
+
+tbody tr:hover { 
+    background: #1e1e28; 
+}
+
+.leader { 
+    background: rgba(225, 6, 0, 0.12); 
+}
+
+.pos {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px; 
+    height: 28px;
+    background: var(--white);
+    color: var(--black);
+    font-weight: 900;
+    font-size: 0.85rem;
+}
+
+.leader .pos { 
+    background: var(--red); 
+    color: var(--white);
+}
+
+.bar {
+    display: inline-block;
+    width: 4px; 
+    height: 14px;
+    background: var(--team);
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/*--------------------- 5. INGRESSOS ---------------------*/
+.tickets {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 60px;
+}
+
+.tickets-info p {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.ticket-highlight {
+    background: rgba(255, 193, 7, 0.1);
+    border-left: 4px solid #ffc107;
+    color: #ffc107;
+    padding: 12px 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.ticket-option {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--white);
+}
+
+.ticket-option .price {
+    color: var(--red);
+    font-weight: 700;
+}
+
+.ticket-form {
+    background: var(--panel);
+    padding: 30px;
+    border-top: 4px solid var(--red);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group.full {
+    grid-column: 1 / -1;
+}
+
+.form-group small {
+    color: var(--muted);
+    font-size: 0.75rem;
+}
+
+input[type="file"] {
+    padding: 10px;
+    background: var(--black);
+}
+
+/*--------------------- 6. RODAPÉ ---------------------*/
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+/*--------------------- RESPONSIVIDADE (CELULARES E TABLETS) ---------------------*/
+@media (max-width: 768px) {
+    .topbar {
+        padding: 15px 20px;
+    }
+    
+    .menu { 
+        display: none; 
+    }
+    
+    .hero { 
+        flex-direction: column; 
+        gap: 30px;
+        padding: 40px 20px;
+    } 
+    
+    .hero h1 { 
+        font-size: 3.5rem; 
+    }
+    
+    .track-info {
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .drivers { 
+        grid-template-columns: 1fr 1fr; 
+    }
+    
+    .filters { 
+        flex-direction: column; 
+    }
+    
+    .btn-filter {
+        width: 100%;
+        align-self: center;
+    }
+    
+    .tickets { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .form-grid { 
+        grid-template-columns: 1fr; 
+    }
+}
