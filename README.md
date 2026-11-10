@@ -1,60 +1,52 @@
-# 🏎️ PIT WALL — GP DE SÃO PAULO
+<h1 align="center">🏎️ PIT WALL — GP DE SÃO PAULO</h1>
 
-Projeto desenvolvido com **HTML5 e CSS3**, inspirado no universo da Fórmula 1 e no Grande Prêmio de São Paulo, realizado no Autódromo de Interlagos.
+<div align="center">
+  <img src="preview.png" alt="Prévia do site PIT WALL - GP de São Paulo" width="100%">
+</div>
 
 ## 📌 Sobre o projeto
 
-O PIT WALL é um site temático que simula uma página oficial do Grande Prêmio de São Paulo. Seu objetivo é apresentar informações sobre pilotos, classificação e ingressos, proporcionando uma experiência visual inspirada nos sites de automobilismo.
+O **PIT WALL** é um site temático inspirado no Grande Prêmio de São Paulo de Fórmula 1 e no Autódromo de Interlagos. O projeto apresenta informações sobre pilotos, classificação e ingressos em uma interface com identidade visual inspirada no automobilismo.
 
 ## ✨ Funcionalidades
 
-- **Página inicial:** destaque do GP de São Paulo, com imagem temática e informações sobre o circuito.
-- **Grid de pilotos:** apresentação de pilotos e suas respectivas equipes.
-- **Classificação:** tabela com posições, vitórias, pontuação e diferenças entre pilotos.
-- **Ingressos:** apresentação de setores, preços e formulário de reserva.
-- **Design responsivo:** adaptação do layout para diferentes tamanhos de tela.
+- Página inicial com destaque para o GP de São Paulo.
+- Cards com pilotos e suas equipes.
+- Tabela de classificação com vitórias e pontuação.
+- Seção de ingressos com setores e preços.
+- Formulário de reserva demonstrativo.
+- Layout responsivo para diferentes tamanhos de tela.
 
 ## 🛠️ Tecnologias utilizadas
 
-- HTML5 — estruturação do site.
-- CSS3 — estilização, cores, layouts e responsividade.
-- Google Fonts — utilização da fonte Titillium Web.
+- **HTML5** — estrutura da página.
+- **CSS3** — estilização, layouts e responsividade.
+- **Google Fonts** — fonte Titillium Web.
 
-## 🎨 Identidade visual
+## 🚀 Como executar
 
-O projeto utiliza uma identidade visual inspirada nas corridas de Fórmula 1, com predominância das cores:
-
-- 🔴 Vermelho: destaque e elementos principais.
-- ⚫ Preto: fundo e estrutura.
-- ⚪ Branco: textos e contrastes.
-- 🟠 Laranja e outras cores: identificação das equipes.
+1. Baixe ou clone este repositório.
+2. Abra a pasta do projeto no Visual Studio Code.
+3. Confira se a imagem utilizada no destaque está no caminho esperado pelo CSS (`img/piloto.jpg`).
+4. Abra o arquivo `index.html` no navegador.
 
 ## 📂 Estrutura do projeto
 
 ```text
 PIT-WALL/
-│
 ├── index.html
 ├── styles.css
-│
+├── README.md
+├── preview.png
 └── img/
     └── piloto.jpg
 ```
 
-## 🚀 Como executar
-
-1. Faça o download dos arquivos do projeto.
-2. Abra a pasta no Visual Studio Code.
-3. Verifique se a imagem está na pasta `img`, com o nome `piloto.jpg`.
-4. Abra o arquivo `index.html` no navegador.
-5. Explore as seções do site!
-
 ## 🎓 Objetivo acadêmico
 
-Este projeto foi desenvolvido com o objetivo de praticar conhecimentos de desenvolvimento web, utilizando HTML e CSS para construir uma página temática, organizada e visualmente atrativa.
+Projeto desenvolvido para praticar conceitos de desenvolvimento web, utilizando HTML e CSS na criação de uma página temática.
 
 ---
 
-**Desenvolvido por Mariana Gameiro Silveira**
-
+**Desenvolvido por Mariana Gameiro Silveira**  
 *Projeto de estudo de HTML e CSS.*
